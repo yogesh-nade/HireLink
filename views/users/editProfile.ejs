@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Admin Profile</title>
+    <link rel="stylesheet" href="/stylesheets/editUser.css">
+    <style>
+        /* Center the container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Adjust this to center vertically */
+        }
+        
+        
+        /* Other styles can go here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit  Profile</h1>
+        <div style="border-radius: 50%;  width: 80px; height: 80px; border: 3px solid #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+            <img src="userImages/<%= user.image %>" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        
+        
+        <h2><%= user.regNum %><br><%= user.branch %></h2>
+        <!-- <h2><%= user.branch %></h2> -->
+        <form method="post">
+            <div class="form-group">
+                <label for="name">Admin Name:</label>
+                <input type="text" id="name" name="name" value="<%= user.name %>" >
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="<%= user.email %>" >
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile:</label>
+                <input type="text" id="mobile" name="mobile" value="<%= user.mobile %>" >
+            </div>
+            
+            <div class="form-group">
+                <label for="cgpa">CGPA:</label>
+                <input type="text" id="cgpa" name="cgpa" value="<%= user.cgpa %>" >
+            </div>
+           
+            <div class="form-group">
+                <input type="hidden" name="idd" value="<%= user._id %>">
+                
+                <button type="submit" class="btn">Save Changes</button>
+            </div>
+        </form>
+        <a href="/profile?id=<%= user._id %>" class="back-link">Back to profile</a>
+    </div>
+</body>
+</html>

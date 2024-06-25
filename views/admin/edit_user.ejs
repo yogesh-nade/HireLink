@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User Profile</title>
+    <link rel="stylesheet" href="/stylesheets/editUser.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit User Profile</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="name">User Name:</label>
+                <input type="text" id="name" name="name" value="<%= usern.name %>" readonly>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="<%= usern.email %>" readonly>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile:</label>
+                <input type="text" id="mobile" name="mobile" value="<%= usern.mobile %>" readonly>
+            </div>
+            <div class="form-group">
+                <label for="regNum">Registration Number:</label>
+                <input type="text" id="regNum" name="regNum" value="<%= usern.regNum %>" readonly>
+            </div>
+            <div class="form-group">
+                <label for="status" style="color: palevioletred;">Placed:</label>
+                <input type="radio" id="status_placed" name="status" value="1" <% if (usern.status == 1) { %>checked <% } %>>
+                <label for="status_placed">Yes</label>
+                <input type="radio" id="status_not_placed" name="status" value="0" <% if (usern.status == 0) { %>checked <% } %>>
+                <label for="status_not_placed">No</label>
+            </div>
+            <div class="form-group">
+                <label for="cgpa">CGPA:</label>
+                <input type="text" id="cgpa" name="cgpa" value="<%= usern.cgpa %>">
+            </div>
+            <div class="form-group">
+                <input type="hidden" name="id" value="<%= usern._id %>">
+                <input type="hidden" name="admin_id" value="<%= user._id %>">
+                <button type="submit" class="btn">Save Changes</button>
+            </div>
+        </form>
+        <a href="/admin/home?id=<%= user._id %>" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>

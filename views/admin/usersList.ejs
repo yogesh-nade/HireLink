@@ -1,0 +1,217 @@
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Products Page - Dashboard Template</title>
+    <!--
+
+    Template 2108 Dashboard
+
+	http://www.tooplate.com/view/2108-dashboard
+
+    -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+    />
+    <!-- https://fonts.google.com/specimen/Open+Sans -->
+    <link rel="stylesheet" href="/stylesheets/fontawesome.min.css" />
+    <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="/stylesheets/tooplate.css" />
+
+    <style>
+      .pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-link {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-link:hover {
+    background-color: #f0f0f0;
+}
+
+.pagination-link.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.arrow {
+    margin-right: 4px;
+}
+
+/* Additional styles for hover effects and active page link */
+
+    </style>
+  </head>
+
+  <body id="reportsPage" class="bg02">
+    <div class="" id="home">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="navbar navbar-expand-xl navbar-light bg-light">
+              <img src="Images/IIIT_Surat_Logo.jpg" alt=""  width="70" height="70">
+              <h1 class="tm-site-title mb-0">IIITSurat</h1>
+              
+              <button
+                class="navbar-toggler ml-auto mr-0"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/home?id=<%= user._id %>"
+                      >Dashboard
+                      <span class="sr-only">(current)</span>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/companyList?id=<%= user._id %>">Companys</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/admin/usersList?id=<%= user._id %>">Student</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/profile?id=<%= user._id %>">Profile</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link d-flex" href="/admin/logout">
+                      <i class="far fa-user mr-2 tm-logout-icon"></i>
+                      <span>Logout</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <!-- row -->
+
+        <div class="bg-white tm-block h-100">
+          <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <h2 class="tm-block-title d-inline-block">
+                    <a href="/admin/export_users">Export users</a>
+                  </h2><br>
+              <h2 class="tm-block-title d-inline-block">
+                List of registered Student
+              </h2>
+            </div>
+            <!-- search bar  -->
+            <!-- <form>
+              <input type="text" placeholder="email,roll.no,name" name="search">
+              <input type="submit" value="search">
+            </form> -->
+
+          </div>
+          <div class="table-responsive">
+            <table
+              class="table table-hover table-striped tm-table-striped-even mt-3"
+            >
+              <thead>
+                <tr class="tm-bg-gray">
+                  <th scope="col" class="text-center">Student Name</th>
+                  <th scope="col" class="text-center">Email</th>
+                  <th scope="col" class="text-center">Branch</th>
+                  <!-- <th scope="col" class="text-center">Mobile</th> -->
+                  <th scope="col" class="text-center">Image</th>
+                  <th scope="col" class="text-center">Status</th>
+                  <th scope="col">&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <% if (usern.length > 0) { %>
+                    <% for (let i = 0; i < usern.length; i++) { %>
+                        <tr>
+                            <td class="tm-product-name text-center"><%= usern[i].name %></td>
+                            <td class="text-center"><%= usern[i].email %></td>
+                            <td class="text-center">CSE</td>
+                            <!-- <td><%= usern[i].mobile %></td> -->
+                            <td class="text-center"><img src="/userImages/<%= usern[i].image %>" width="50px" height="50px"></td>
+                            <td>
+                                <% if (usern[i].status=== 0) { %>
+                                    <p>Not Placed</p>
+                                <% } else { %>
+                                    <p>Placed </p>
+                                <% } %>
+                            </td>
+                            <td><a href="/admin/edit_user?idd=<%= usern[i]._id %>&id=<%= user._id %>">Edit</a></td>
+                        </tr>
+                    <% } %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="5">User not found</td>
+                    </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </div>
+          <br>
+
+          <br>
+
+          <div class="pagination-container">
+            <% if (previousPage !== undefined && previousPage !== null) { %>
+                <a class="pagination-link" href="?page=<%= previousPage %>&id=<%= user._id %>">
+                    <span class="arrow">&larr;</span> Previous
+                </a>
+            <% } %>
+        
+            <% for (let j = 1; j <= totalPages; j++) { %>
+                <a class="pagination-link <%= j === currentPage ? 'active' : '' %>" href="?page=<%= j %>&id=<%= user._id %>"><%= j %></a>
+            <% } %>
+        
+            <% if (nextPage !== undefined && nextPage !== null) { %>
+                <a class="pagination-link" href="?page=<%= nextPage %>&id=<%= user._id %>">
+                    Next <span class="arrow">&rarr;</span>
+                </a>
+            <% } %>
+        </div>
+        
+
+
+        </div>
+      </div>
+    </div>
+    <script src="/javascripts/jquery-3.3.1.min.js"></script>
+    <!-- https://jquery.com/download/ -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <!-- https://getbootstrap.com/ -->
+    <script>
+      $(function () {
+        $(".tm-product-name").on("click", function () {
+          window.location.href = "Student_Profile.html";
+        });
+      });
+
+    </script>
+  </body>
+</html>

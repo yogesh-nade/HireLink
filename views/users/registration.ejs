@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
+        html {
+            font-size: 10px;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+
+        body {
+            font-family: 'PT Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.428571429;
+            font-weight: 400;
+            color: #333;
+            background-color: #4f5e75;
+        }
+
+        .container {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-color: #6b97ab; /* Light blue background */
+        }
+
+        .content-wrapper {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            background-color: #82ecde; /* Light blue background */
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        }
+
+        .image-section {
+            flex: 1;
+            background-color: #2f2f5a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .form-section {
+            flex: 1;
+            background-color: #002346;
+            color: #fff;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Ensures the footer stays at the bottom */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h3 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        header h4 {
+            font-size: 18px;
+            font-weight: 400;
+            color: #ccc;
+            margin-top: 10px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .form-item {
+            margin-bottom: 20px;
+        }
+
+        .form-item input[type="text"],
+        .form-item input[type="email"],
+        .form-item input[type="password"],
+        .form-item input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .form-item-double {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-item-double .form-item {
+            flex: 0 0 48%;
+        }
+
+        .form-item-radio {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .form-item-radio .radio-label {
+            flex: 1;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .form-item-radio .radio-group {
+            flex: 3;
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px; /* Adjust space between radio options */
+        }
+
+        .form-item-radio .radio-group label {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 8px; /* Adjust space between radio button and label */
+        }
+
+        .submit {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: #fff;
+            transition: all ease .2s;
+        }
+
+        .submit:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #007BFF;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <% if (typeof message !== 'undefined') { %>
+        <div class="message <%= success ? 'success' : 'error' %>" style="color: rgb(5, 22, 5); text-align: center; font-size: 18px; font-weight: bold;"><%= message %></div>
+    <% } %>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="image-section">
+                <img src="/Images/bk27.jpg" alt="Illustration">
+            </div>
+            <div class="form-section">
+                <header>
+                    <h3>Register</h3>
+                    <h4>Please fill your information below</h4>
+                </header>
+                <main>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <div class="form-item-double">
+                            <div class="form-item">
+                                <input type="text" name="name" placeholder="Enter name" id="username" required>
+                                <!-- <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> required field</small> -->
+                            </div>
+                            <div class="form-item">
+                                <input type="email" name="email" placeholder="Enter Email (official)" id="email" required>
+                            </div>
+                        </div>
+                        <div class="form-item-double">
+                            <div class="form-item">
+                                <input type="text" name="mobile" placeholder="Enter Mobile" required>
+                            </div>
+                            <div class="form-item">
+                                <input type="text" name="cgpa" placeholder="Enter CGPA" required>
+                            </div>
+                        </div>
+                        <div class="form-item-double">
+                            <div class="form-item">
+                                <input type="text" name="regNum" placeholder="Enter Registration No. (eg: UI22CS86)" required>
+                            </div>
+                            <div class="form-item">
+                                <input type="password" name="password" placeholder="Enter password" id="password" required>
+                            </div>
+                        </div>
+                        <div class="form-item-radio">
+                            <div class="radio-label">Branch:</div>
+                            <div class="radio-group">
+                                <div>
+                                    <input id="CSE" type="radio" name="branch" value="CSE" data-once required>
+                                    <label for="CSE">CSE</label>
+                                </div>
+                                <div>
+                                    <input id="ECE" type="radio" name="branch" value="ECE" data-once required>
+                                    <label for="ECE">ECE</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item-radio">
+                            <div class="radio-label">Gender:</div>
+                            <div class="radio-group">
+                                <div>
+                                    <input id="Male" type="radio" name="gender" value="Male" data-once required>
+                                    <label for="Male">Male</label>
+                                </div>
+                                <div>
+                                    <input id="Female" type="radio" name="gender" value="Female" data-once required>
+                                    <label for="Female">Female</label>
+                                </div>
+                                <div>
+                                    <input id="Others" type="radio" name="gender" value="Others" data-once required>
+                                    <label for="Others">Others</label><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label class="label">Upload Profile Pic &nbsp;&nbsp;&nbsp;</label>
+                            <input type="file" name="image" placeholder="Upload Profile Pic" id="image" required>
+                        </div>
+                        <div class="form-item align-center">
+                            <button type="submit" value="Register" class="submit">Register</button>
+                        </div>
+                    </form>
+                </main>
+                <footer>
+                    <p>Already have an account? <a href="/login">Login here</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

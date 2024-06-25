@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .company {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .company h2 {
+            margin-top: 0;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .company p {
+            margin: 0;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .company .details-pdf {
+            margin-top: 10px;
+        }
+
+        .company .details-pdf a {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .company .details-pdf a:hover {
+            background-color: #0056b3;
+        }
+
+        .back-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Company Information</h1>
+        <div class="company">
+            <h2>Company Name :&nbsp <%= Company.name %></h2>
+            <p>ID:&nbsp <%= Company.companyId %></p>
+            <p>Description: &nbsp<%= Company.description %></p>
+            <div class="details-pdf">
+                <a href="userImages/<%= Company.file %>">Details PDF</a>
+            </div>
+            <p>No. of Students Required:&nbsp <%= Company.totalReq %></p>
+            <p>Branch Required:&nbsp<%= Company.branch %></p>
+            <p>Minimum CGPA Required:&nbsp<%= Company.cgpa %></p>
+        </div>
+        
+        <div class="back-button">
+            <button onclick="goBack()">Go Back</button>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
