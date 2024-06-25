@@ -1,0 +1,222 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background: #000;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-container .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: #555;
+}
+
+nav ul li.dropdown .dropbtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+nav ul li.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+nav ul li.dropdown .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul li.dropdown .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+nav ul li.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.hero {
+    background-image: url('/Images/bk31.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons button {
+    background: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hero-buttons button:hover {
+    background: #e6b800;
+}
+
+.services, .statistics, .recruiters, .coordinators {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.services {
+    background-color: #f0f0f0;
+}
+
+.statistics {
+    background-color: #e0e0e0;
+}
+
+.recruiters {
+    background-color: #d0d0d0;
+}
+
+.coordinators {
+    background-color: #c0c0c0;
+}
+
+.services h2, .statistics h2, .recruiters h2, .coordinators h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.service-box {
+    background: #fff;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+}
+
+.statistics-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.stat-box {
+    background: #fff;
+    padding: 20px;
+    width: 45%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+}
+
+.stat-box img {
+    width: 100%;
+    height: auto;
+}
+
+.recruiters-image {
+    display: flex;
+    justify-content: center;
+}
+
+.recruiters-image img {
+    width: 80%; /* Adjusted width for better fit */
+    height: auto;
+}
+
+.coordinators-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.coordinator-box {
+    background: #fff;
+    padding: 20px;
+    width: 20%; /* Adjusted width for better fit */
+    height: auto; /* Adjusted height for better fit */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.coordinator-box img {
+    width: 100%; /* Make image take the full width of the box */
+    height: auto; /* Maintain aspect ratio */
+}
+
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
