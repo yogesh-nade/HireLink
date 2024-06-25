@@ -394,12 +394,12 @@ const SendVerifyMail =async(name,email,user_id)=>{
             secure:false,
             requireTLS:true,
             auth:{
-                user:'yogesh1940.ac.in@gmail.com',
-                pass:'psbs fkrk cxhf jurt'
+                user:'your_mail_id',
+                pass:'your_smtp_pass'
             }
         });
         const mailOptions={
-            from:'yogesh1940.ac.in@gmail.com',
+            from:'your_mail_id',
             to:email,
             subject:'For Email verification',
             html:'<p>Hii '+name+', please click here to <a href="http://localhost:3000/admin/verifyA?id='+user_id+'">verify</a> your mail.</p><br><b>Email:<b>'+email+'<br></b>Id:</b>'+user_id+''
