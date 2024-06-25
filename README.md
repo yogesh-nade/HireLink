@@ -1,7 +1,7 @@
 # Placement_management_sys<br>
 This is a web based placement management system for colleges<br>
 <h2>Author: Yogesh</h2><br>
-<h1># HTML_CSS_JS_NodeJs_MongoDB</h1><br>
+<h1># HTML(EJS)_CSS_JS_NodeJs_MongoDB</h1><br>
 this project focus more on backend part and features 
 
 
