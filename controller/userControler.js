@@ -26,12 +26,12 @@ const SendVerifyMail =async(name,email,user_id)=>{
             secure:false,
             requireTLS:true,
             auth:{
-                user:'yogesh1940.ac.in@gmail.com',
-                pass:'psbs fkrk cxhf jurt'
+                user:'your_mail_id',
+                pass:'your_smtp_password'
             }
         });
         const mailOptions={
-            from:'yogesh1940.ac.in@gmail.com',
+            from:'your_mail_id',
             to:email,
             subject:'For Email verification',
             html:'<p>Hii '+name+', please click here to <a href="http://localhost:3000/verify?id='+user_id+'">verify</a> your mail.</p>'
@@ -385,12 +385,12 @@ const SendResetPWMail =async(name,email,token)=>{
             secure:false,
             requireTLS:true,
             auth:{
-                user:'yogesh1940.ac.in@gmail.com',
-                pass:'psbs fkrk cxhf jurt'
+                user:'your_mail_id',
+                pass:''
             }
         });
         const mailOptions={
-            from:'yogesh1940.ac.in@gmail.com',
+            from:'your_mail_id',
             to:email,
             subject:'For Rest Password',
             html:'<p>Hii '+name+', please click here to <a href="http://localhost:3000/forget_pass?token='+token+'">Reset</a> your password.</p>'
