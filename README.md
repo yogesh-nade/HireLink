@@ -15,4 +15,12 @@ steps to run
 and you will be able to use it 
 
 <img width="936" alt="Screenshot 2025-01-06 094616" src="https://github.com/user-attachments/assets/28e871a7-55c6-4b49-9971-716c88b2d8d6" />
+<img width="843" alt="Screenshot 2025-01-06 094655" src="https://github.com/user-attachments/assets/8a26ba85-5188-419b-86cc-cf5bcd0e6017" />
+<img width="946" alt="Screenshot 2025-01-06 094807" src="https://github.com/user-attachments/assets/5d7a7602-0f9c-4501-8e35-30ee3bf8b80b" />
+<img width="855" alt="Screenshot 2025-01-06 094828" src="https://github.com/user-attachments/assets/aa163520-19b1-47bc-bd91-e88613b26675" />
+<img width="865" alt="Screenshot 2025-01-06 094916" src="https://github.com/user-attachments/assets/920b0842-8d5f-4d42-b735-b1e1ec36e589" />
+
+
+
+
 
