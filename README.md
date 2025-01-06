@@ -14,3 +14,5 @@ steps to run
 6.go to chrome or default browser and enter localhost:3000/first
 and you will be able to use it 
 
+<img width="936" alt="Screenshot 2025-01-06 094616" src="https://github.com/user-attachments/assets/28e871a7-55c6-4b49-9971-716c88b2d8d6" />
+
